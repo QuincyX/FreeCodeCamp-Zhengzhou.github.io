@@ -1,7 +1,7 @@
 <template>
   <div>
     <md-list style="max-width:500px;margin:0 auto;">
-      <md-list-item v-for="(item,index) in usall" class="namelist">
+      <md-list-item v-for="(item,index) in usall" :key="item.name" class="namelist">
         <md-avatar>
           <img :src="item.img" alt="People">
         </md-avatar>

@@ -69,29 +69,13 @@
       </md-card-header>
       <md-card-content>
         <md-layout md-gutter>
-          <md-layout md-flex-xsmall="100" md-flex-medium="50" md-flex-large="33" class="smallcard">
-            <img :src="code2"><br>
-            <p>Html5</p>
-          </md-layout>
-          <md-layout md-flex-xsmall="100" md-flex-medium="50" md-flex-large="33" class="smallcard">
-            <img :src="code3"><br>
-            <p>CSS3</p>
-          </md-layout>
-          <md-layout md-flex-xsmall="100" md-flex-medium="50" md-flex-large="33" class="smallcard">
-            <img :src="code4"><br>
-            <p>JavaScript</p>
-          </md-layout>
-          <md-layout md-flex-xsmall="100" md-flex-medium="50" md-flex-large="33" class="smallcard">
-            <img :src="code1">
-            <p>D3.js</p>
-          </md-layout>
-          <md-layout md-flex-xsmall="100" md-flex-medium="50" md-flex-large="33" class="smallcard">
-            <img :src="code5"><br>
-            <p>数据库</p>
-          </md-layout>
-          <md-layout md-flex-xsmall="100" md-flex-medium="50" md-flex-large="33" class="smallcard">
-            <img :src="code6"><br>
-            <p>Git & github</p>
+          <md-layout 
+            md-flex-xsmall="100" md-flex-medium="50" md-flex-large="33" md-flex-xlarge="33" 
+            class="smallcard"
+            v-for="item in codes" :key="item.name"
+            >
+            <img :src="item.img"><br>
+            <p>{{ item.name }}</p>
           </md-layout>
         </md-layout>
       </md-card-content>
@@ -126,12 +110,14 @@ export default {
       face1:face1,
       face2:face2,
       face3:face3,
-      code1:code1,
-      code2:code2,
-      code3:code3,
-      code4:code4,
-      code5:code5,
-      code6:code6
+      codes:[
+        {name:"Html5",img:code2},
+        {name:"CSS3",img:code3},
+        {name:"JavaScript",img:code4},
+        {name:"D3.js",img:code1},
+        {name:"数据库",img:code5},
+        {name:"Git & github",img:code6},
+        ]
     }
   },
   created(){

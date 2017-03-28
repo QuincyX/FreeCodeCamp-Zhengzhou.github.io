@@ -6,6 +6,7 @@
   <md-button class="md-icon-button" @click.native="toggleLeftSidenav">
     <md-icon>menu</md-icon>
   </md-button>
+                                      <!-- 使用Vuex储存页面标题 -->
   <h2 class="md-title" style="flex: 1">{{ $store.state.mytitle }}</h2>
   <md-button class="md-icon-button" href="https://github.com/FreeCodeCamp-Zhengzhou/FreeCodeCamp-Zhengzhou.github.io">
     <md-icon>code</md-icon>
@@ -20,6 +21,7 @@
     </div>
   </md-toolbar>
   <p>
+    <!-- 使用router-link跳转 -->
     <router-link to="/fcc">
       <md-button class="md-primary">关于Fcc</md-button>
     </router-link>
@@ -52,7 +54,7 @@
   <a href="https://cn.vuejs.org"><img src="./assets/logo.png"></a>
 </md-sidenav>    
 
-<!-- 路由切换页面 -->
+<!-- 路由切换页面容器 -->
 <router-view id="myview"></router-view>
 
   </div>
@@ -63,6 +65,7 @@ export default {
   name: 'app',
   methods: {
     toggleLeftSidenav() {
+      // 侧边栏打开关闭
       this.$refs.leftSidenav.toggle();
     }
   }
